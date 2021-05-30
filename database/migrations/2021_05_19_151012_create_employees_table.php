@@ -25,6 +25,8 @@ class CreateEmployeesTable extends Migration
             $table->string('vacation');
             $table->string('city');
             $table->timestamps();
+
+
         });
     }
 

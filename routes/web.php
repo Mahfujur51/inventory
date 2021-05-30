@@ -37,8 +37,8 @@ Route::post('/store/customer','CustomerController@store')->name('customer.store'
 Route::get('/edit/customer/{id}','CustomerController@edit')->name('edit.customer');
 Route::post('/update/customer/{id}','CustomerController@update')->name('customer.update');
 
-//Route for Supplier
-/*Route for Customer*/
+
+/*Route for Supplier*/
 Route::get('/suppliers','SupplierController@index')->name('supplier.index');
 Route::get('/add/supplier','SupplierController@add')->name('supplier.add');
 Route::get('/view/supplier/{id}','SupplierController@view')->name('view.supplier');

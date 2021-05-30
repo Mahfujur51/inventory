@@ -7,10 +7,10 @@
             <!-- Page-Title -->
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 class="pull-left page-title">Welcome ! to Customer Page</h4>
+                    <h4 class="pull-left page-title">Welcome ! to Supplier Page</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{route('home')}}">Moltran</a></li>
-                        <li class="active">Customer</li>
+                        <li class="active">Supplier</li>
                     </ol>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading panel-color"><h3 class="panel-title text-center">Add Customer</h3></div>
                         <div class="panel-body">
-                            <form role="form" method="post" action="{{route('customer.store')}}"  enctype="multipart/form-data">
+                            <form role="form" method="post" action="{{route('supplier.store')}}"  enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6">
@@ -68,6 +68,20 @@
                                             <img id="pic"  height="100px" width="100px"  alt="image preview"/>
 
                                             @error('photo')
+                                            <span class="invalid-feedback " role="alert">
+                                                    <strong class="text-danger">{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Supplier Type</label>
+                                            <select name="type" class="form-control @error('type') is-invalid @enderror">
+                                                <option >Please Select Supplier Type</option>
+                                                <option value="distributor">Distributor</option>
+                                                <option value="wholeseller">Whole Seller</option>
+                                                <option value="broker">Broker</option>
+                                            </select>
+                                            @error('type')
                                             <span class="invalid-feedback " role="alert">
                                                     <strong class="text-danger">{{ $message }}</strong>
                                                 </span>

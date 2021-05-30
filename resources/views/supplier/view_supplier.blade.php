@@ -11,8 +11,8 @@
                                 <div class="bg-picture text-center" style="background-image:url('{{asset('backend/images/big/bg.jpg')}}')">
                                     <div class="bg-picture-overlay"></div>
                                     <div class="profile-info-name">
-                                        <img src="{{asset('customer/'.$customer->photo)}}" class="thumb-lg img-circle img-thumbnail" alt="profile-image">
-                                        <h3 class="text-white">{{$customer->name}}</h3>
+                                        <img src="{{asset('supplier/'.$supplier->photo)}}" class="thumb-lg img-circle img-thumbnail" alt="profile-image">
+                                        <h3 class="text-white">{{$supplier->name}}</h3>
                                     </div>
                                 </div>
                                 <!--/ meta -->
@@ -46,42 +46,42 @@
                                                         <div class="about-info-p">
                                                             <strong>Full Name</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$customer->name}}</p>
+                                                            <p class="text-muted">{{$supplier->name}}</p>
                                                         </div>
                                                         <div class="about-info-p">
                                                             <strong>Mobile</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$customer->phone}}</p>
+                                                            <p class="text-muted">{{$supplier->phone}}</p>
                                                         </div>
                                                         <div class="about-info-p">
                                                             <strong>Email</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$customer->email}}</p>
+                                                            <p class="text-muted">{{$supplier->email}}</p>
                                                         </div>
                                                         <div class="about-info-p m-b-0">
                                                             <strong>Location</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$customer->address}}</p>
+                                                            <p class="text-muted">{{$supplier->address}}</p>
                                                         </div>
                                                         <div class="about-info-p m-b-0">
                                                             <strong>Bank Name</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$customer->bank_name}}</p>
+                                                            <p class="text-muted">{{$supplier->bank_name}}</p>
                                                         </div>
                                                         <div class="about-info-p m-b-0">
                                                             <strong>Shop Name</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$customer->shopname}}</p>
+                                                            <p class="text-muted">{{$supplier->shopname}}</p>
                                                         </div>
                                                         <div class="about-info-p m-b-0">
                                                             <strong>Account Holder Name</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$customer->account_holder}}</p>
+                                                            <p class="text-muted">{{$supplier->account_holder}}</p>
                                                         </div>
                                                         <div class="about-info-p m-b-0">
                                                             <strong>Account Name</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$customer->account_number}}</p>
+                                                            <p class="text-muted">{{$supplier->account_number}}</p>
                                                         </div>
                                                     </div>
                                                 </div>

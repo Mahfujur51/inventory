@@ -7,10 +7,10 @@
             <!-- Page-Title -->
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 class="pull-left page-title">Welcome ! to Customer Page</h4>
+                    <h4 class="pull-left page-title">Welcome ! to Supplier Page</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{route('home')}}">Dashboard</a></li>
-                        <li class="active">Customer</li>
+                        <li class="active">Supplier</li>
                     </ol>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title ">Show ALl Employee</h3>
+                            <h3 class="panel-title ">Show ALl Supplier</h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -34,24 +34,26 @@
                                             <th>Shop Name</th>
                                             <th>Phone</th>
                                             <th>Bank name</th>
+                                            <th>Type</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
 
 
                                         <tbody>
-                                        @foreach($customers as $key=>$customer)
+                                        @foreach($suppliers as $key=>$supplier)
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td>{{$customer->name}}</td>
-                                            <td><img src="{{asset('customer/'.$customer->photo)}}" alt="" width="100" height="100"></td>
-                                            <td>{{$customer->shopname}}</td>
-                                            <td>{{$customer->phone}}</td>
-                                            <td>{{$customer->bank_name}}</td>
+                                            <td>{{$supplier->name}}</td>
+                                            <td><img src="{{asset('supplier/'.$supplier->photo)}}" alt="" width="100" height="100"></td>
+                                            <td>{{$supplier->shopname}}</td>
+                                            <td>{{$supplier->phone}}</td>
+                                            <td>{{$supplier->bank_name}}</td>
+                                            <td><span class="badge badge-danger">{{$supplier->type}}</span></td>
                                             <td>
-                                                <a href="{{route('view.customer',$customer->id)}}" class="btn btn-primary btn-sm"><i class="ion-eye"></i></a>
-                                                <a href="{{route('delete.customer',$customer->id)}}" class="btn btn-danger btn-sm" id="delete"><i class="ion-trash-b"></i></a>
-                                                <a href="{{route('edit.customer',$customer->id)}}" class="btn btn-success btn-sm"><i class="ion-compose"></i></a>
+                                                <a href="{{route('view.supplier',$supplier->id)}}" class="btn btn-primary btn-sm"><i class="ion-eye"></i></a>
+                                                <a href="{{route('delete.supplier',$supplier->id)}}" class="btn btn-danger btn-sm" id="delete"><i class="ion-trash-b"></i></a>
+                                                <a href="{{route('edit.supplier',$supplier->id)}}" class="btn btn-success btn-sm"><i class="ion-compose"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
