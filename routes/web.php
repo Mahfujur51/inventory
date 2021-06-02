@@ -74,3 +74,16 @@ Route::get('/delete/product/{id}','ProductController@delete')->name('delete.prod
 Route::post('/store/product','ProductController@store')->name('product.store');
 Route::get('/edit/product/{id}','ProductController@edit')->name('edit.product');
 Route::post('/update/product/{id}','ProductController@update')->name('product.update');
+
+
+/*Route for Expanse*/
+Route::get('/expanse','ExpanseController@index')->name('expanse.index');
+Route::get('/add/expanse','ExpanseController@add')->name('expanse.add');
+Route::get('/view/expanse/{id}','ExpanseController@view')->name('view.expanse');
+Route::get('/delete/expanse/{id}','ExpanseController@delete')->name('delete.expanse');
+Route::post('/store/expanse','ExpanseController@store')->name('expanse.store');
+Route::get('/edit/expanse/{id}','ExpanseController@edit')->name('edit.expanse');
+Route::get('/today/expanse/','ExpanseController@today')->name('today.expanse');
+Route::get('/month/expanse/','ExpanseController@month')->name('month.expanse');
+Route::get('/year/expanse/','ExpanseController@year')->name('year.expanse');
+Route::post('/update/expanse/{id}','ExpanseController@update')->name('expanse.update');

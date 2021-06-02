@@ -75,6 +75,13 @@
                         <li><a href="{{route('product.add')}}">Add New</a></li>
                     </ul>
                 </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect"><i class=" md-account-child"></i><span> Expanse </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('expanse.index')}}">All Expanse</a></li>
+                        <li><a href="{{route('expanse.add')}}">Add New</a></li>
+                    </ul>
+                </li>
 
 
 
