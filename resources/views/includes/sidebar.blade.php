@@ -25,6 +25,9 @@
                 <li>
                     <a href="{{route('home')}}" class="waves-effect active"><i class="md md-home"></i><span> Dashboard </span></a>
                 </li>
+                <li>
+                    <a href="{{route('home')}}" class="waves-effect active"><i class="md md-home"></i><span>Point Of Sell(POS) </span></a>
+                </li>
 
                 <li class="has_sub">
                     <a href="#" class="waves-effect"><i class=" md-account-child"></i><span> Employee </span><span class="pull-right"><i class="md md-add"></i></span></a>
@@ -80,6 +83,20 @@
                     <ul class="list-unstyled">
                         <li><a href="{{route('expanse.index')}}">All Expanse</a></li>
                         <li><a href="{{route('expanse.add')}}">Add New</a></li>
+                    </ul>
+                </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect"><i class=" md-account-child"></i><span> Sales Report </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('expanse.index')}}">All Sells </a></li>
+                        <li><a href="{{route('expanse.add')}}">Add New</a></li>
+                    </ul>
+                </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect"><i class=" md-account-child"></i><span> Attendance </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('attendance.index')}}">All attendance  </a></li>
+                        <li><a href="{{route('attendance.add')}}">Take Attendance </a></li>
                     </ul>
                 </li>
 

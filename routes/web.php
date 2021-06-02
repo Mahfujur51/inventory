@@ -87,3 +87,8 @@ Route::get('/today/expanse/','ExpanseController@today')->name('today.expanse');
 Route::get('/month/expanse/','ExpanseController@month')->name('month.expanse');
 Route::get('/year/expanse/','ExpanseController@year')->name('year.expanse');
 Route::post('/update/expanse/{id}','ExpanseController@update')->name('expanse.update');
+
+//Route for Attendace
+Route::get('/attendance','AttendenceController@index')->name('attendance.index');
+Route::get('/add/attendance','AttendenceController@add')->name('attendance.add');
+Route::post('/add/attendance','AttendenceController@attendance')->name('insert.attendance');
