@@ -56,3 +56,21 @@ Route::post('/store/salary','SalaryController@store')->name('salary.store');
 Route::get('/edit/salary/{id}','SalaryController@edit')->name('edit.salary');
 Route::post('/update/salary/{id}','SalaryController@update')->name('salary.update');
 Route::get('/pay_salary/index','SalaryController@pay_salary')->name('pay_salary.index');
+
+/*Route for Category*/
+Route::get('/category','CategoryController@index')->name('category.index');
+Route::get('/add/category','CategoryController@add')->name('category.add');
+Route::get('/view/category/{id}','CategoryController@view')->name('view.category');
+Route::get('/delete/category/{id}','CategoryController@delete')->name('delete.category');
+Route::post('/store/category','CategoryController@store')->name('category.store');
+Route::get('/edit/category/{id}','CategoryController@edit')->name('edit.category');
+Route::post('/update/category/{id}','CategoryController@update')->name('category.update');
+
+/*Route for Product*/
+Route::get('/categories','ProductController@index')->name('product.index');
+Route::get('/add/product','ProductController@add')->name('product.add');
+Route::get('/view/product/{id}','ProductController@view')->name('view.product');
+Route::get('/delete/product/{id}','ProductController@delete')->name('delete.product');
+Route::post('/store/product','ProductController@store')->name('product.store');
+Route::get('/edit/product/{id}','ProductController@edit')->name('edit.product');
+Route::post('/update/product/{id}','ProductController@update')->name('category.update');

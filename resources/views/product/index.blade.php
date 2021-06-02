@@ -7,10 +7,10 @@
             <!-- Page-Title -->
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 class="pull-left page-title">Welcome ! to Pay Salar  Page</h4>
+                    <h4 class="pull-left page-title">Welcome ! to Product  Page</h4>
                     <ol class="breadcrumb pull-right">
-                        <li><a href="{{route('home')}}">Dashboard</a></li>
-                        <li class="active">Salary</li>
+                        <li><a href="{{route('home')}}">Moltran</a></li>
+                        <li class="active">Product </li>
                     </ol>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title ">Show Pay Salary <span class="pull-right">{{date("F Y")}}</span></h3>
+                            <h3 class="panel-title ">Show ALl Product </h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -30,28 +30,28 @@
                                         <tr>
                                             <th>Sl</th>
                                             <th>Name</th>
-                                            <th>Salary</th>
                                             <th>Picture</th>
-                                            <th>Month</th>
-                                            <th>Advance Salary</th>
-
+                                            <th>Experience</th>
+                                            <th>Phone</th>
+                                            <th>Salary</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
 
 
                                         <tbody>
-                                        @foreach($employees as $key=>$employee)
+                                        @foreach($products as $key=>$product)
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td>{{$employee->name}}</td>
-                                            <td>{{$employee->salary}}</td>
-                                            <td><img src="{{asset('employee/'.$employee->photo)}}" alt="" width="100" height="100"></td>
-                                            <td>{{$employee->month}}</td>
-                                            <td>{{$employee->salaries}}</td>
-
+                                            <td>{{$product->name}}</td>
+                                            <td><img src="{{asset('product/'.$product->image)}}" alt="" width="100" height="100"></td>
+                                            <td>{{$product->experience}}</td>
+                                            <td>{{$product->phone}}</td>
+                                            <td>{{$product->salary}}</td>
                                             <td>
-                                                <a href="{{route('edit.salary',$employee->id)}}" class="btn btn-success btn-sm"><i class="ion-compose"></i></a>
+                                                <a href="{{route('view.employee',$product->id)}}" class="btn btn-primary btn-sm"><i class="ion-eye"></i></a>
+                                                <a href="{{route('delete.employee',$product->id)}}" class="btn btn-danger btn-sm" id="delete"><i class="ion-trash-b"></i></a>
+                                                <a href="{{route('edit.employee',$product->id)}}" class="btn btn-success btn-sm"><i class="ion-compose"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

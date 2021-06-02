@@ -25,7 +25,7 @@ class CreateSuppliersTable extends Migration
             $table->string('account_holder');
             $table->string('account_number');
             $table->string('bank_name');
-            $table->string('bank_brach');
+            $table->string('bank_branch');
             $table->string('city');
             $table->timestamps();
         });

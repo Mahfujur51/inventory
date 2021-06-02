@@ -60,6 +60,21 @@
 
                     </ul>
                 </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect"><i class=" md-account-child"></i><span> Category </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('category.index')}}">All Category</a></li>
+                        <li><a href="{{route('category.add')}}">Add New</a></li>
+
+                    </ul>
+                </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect"><i class=" md-account-child"></i><span> Product </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('product.index')}}">All Product</a></li>
+                        <li><a href="{{route('product.add')}}">Add New</a></li>
+                    </ul>
+                </li>
 
 
 
