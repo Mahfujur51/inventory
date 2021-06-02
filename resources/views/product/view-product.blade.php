@@ -11,8 +11,8 @@
                                 <div class="bg-picture text-center" style="background-image:url('{{asset('backend/images/big/bg.jpg')}}')">
                                     <div class="bg-picture-overlay"></div>
                                     <div class="profile-info-name">
-                                        <img src="{{asset('employee/'.$employee->photo)}}" class="thumb-lg img-circle img-thumbnail" alt="profile-image">
-                                        <h3 class="text-white">John Deon</h3>
+                                        <img src="{{asset('product/'.$product->image)}}" class="thumb-lg img-circle img-thumbnail" alt="profile-image">
+                                        <h3 class="text-white">{{$product->name}}</h3>
                                     </div>
                                 </div>
                                 <!--/ meta -->
@@ -24,7 +24,7 @@
                                     <li class="active tab">
                                         <a href="#home-2" data-toggle="tab" aria-expanded="false" class="active">
                                             <span class="visible-xs"><i class="fa fa-home"></i></span>
-                                            <span class="hidden-xs">About Me</span>
+                                            <span class="hidden-xs">About Product</span>
                                         </a>
                                     </li>
                         </div>
@@ -45,27 +45,42 @@
                                                         <div class="about-info-p">
                                                             <strong>Full Name</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$employee->name}}</p>
+                                                            <p class="text-muted">{{$product->name}}</p>
                                                         </div>
                                                         <div class="about-info-p">
                                                             <strong>Mobile</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$employee->phone}}</p>
+                                                            <p class="text-muted">{{$product->product_code}}</p>
                                                         </div>
                                                         <div class="about-info-p">
-                                                            <strong>Email</strong>
+                                                            <strong>Category</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$employee->email}}</p>
+                                                            <p class="text-muted">{{$product->category->name}}</p>
                                                         </div>
                                                         <div class="about-info-p m-b-0">
-                                                            <strong>Location</strong>
+                                                            <strong>Supplier</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$employee->address}}</p>
+                                                            <p class="text-muted">{{$product->supplier->name}}</p>
                                                         </div>
                                                         <div class="about-info-p m-b-0">
-                                                            <strong>Salary</strong>
+                                                            <strong>Product ROute</strong>
                                                             <br/>
-                                                            <p class="text-muted">{{$employee->salary}}</p>
+                                                            <p class="text-muted">{{$product->product_route}}</p>
+                                                        </div>
+                                                        <div class="about-info-p m-b-0">
+                                                            <strong>Product Buy Date</strong>
+                                                            <br/>
+                                                            <p class="text-muted">{{$product->buying_price}}</p>
+                                                        </div>
+                                                        <div class="about-info-p m-b-0">
+                                                            <strong>Product Selleing </strong>
+                                                            <br/>
+                                                            <p class="text-muted">{{$product->selling_price}}</p>
+                                                        </div>
+                                                        <div class="about-info-p m-b-0">
+                                                            <strong>Product Palace </strong>
+                                                            <br/>
+                                                            <p class="text-muted">{{$product->product_place}}</p>
                                                         </div>
                                                     </div>
                                                 </div>

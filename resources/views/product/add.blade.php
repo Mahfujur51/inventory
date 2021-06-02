@@ -64,7 +64,7 @@
                                                     <option value="{{$supplier->id}}">{{$supplier->name}}</option>
                                                 @endforeach
                                             </select>
-                                            @error('name')
+                                            @error('supplier_id')
                                             <span class="invalid-feedback " role="alert">
                                                     <strong class="text-danger">{{ $message }}</strong>
                                                 </span>
@@ -102,8 +102,8 @@
                                     <div class="col-md-6">
 
                                         <div class="form-group">
-                                            <label>Buying  Date </label>
-                                            <input type="date" class="form-control @error('buy_date') is-invalid  @enderror"  placeholder="Enter Buying date" name="buy_date">
+                                            <label for="exampleInputPassword1">Buying  Date</label>
+                                            <input type="date" class="form-control @error('buy_date') is-invalid  @enderror" id="exampleInputPassword1" placeholder="Enter Buying date" name="buy_date">
                                             @error('buy_date')
                                             <span class="invalid-feedback " role="alert">
                                                     <strong class="text-danger">{{ $message }}</strong>
@@ -120,8 +120,8 @@
                                        @enderror
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Vacation</label>
-                                            <input type="number" class="form-control @error('buying_price') is-invalid @enderror" id="exampleInputPassword1" placeholder=" Buying Price " name="buying_price">
+                                            <label>Buying Price</label>
+                                            <input type="number" class="form-control @error('buying_price') is-invalid @enderror" placeholder=" Buying Price " name="buying_price">
                                             @error('buying_price')
                                             <span class="invalid-feedback " role="alert">
                                                 <strong class="text-danger">{{ $message }}</strong>
@@ -130,7 +130,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">selling Price</label>
-                                            <input type="number" class="form-control @error('selling_price') is-invalid @enderror" id="exampleInputPassword1" placeholder="Enter Selling" name="selling_price">
+                                            <input type="number" class="form-control @error('selling_price') is-invalid @enderror" id="exampleInputPassword1" placeholder="Enter Selling" name="city">
                                             @error('selling_price')
                                             <span class="invalid-feedback " role="alert">
                                                 <strong class="text-danger">{{ $message }}</strong>

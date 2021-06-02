@@ -73,4 +73,4 @@ Route::get('/view/product/{id}','ProductController@view')->name('view.product');
 Route::get('/delete/product/{id}','ProductController@delete')->name('delete.product');
 Route::post('/store/product','ProductController@store')->name('product.store');
 Route::get('/edit/product/{id}','ProductController@edit')->name('edit.product');
-Route::post('/update/product/{id}','ProductController@update')->name('category.update');
+Route::post('/update/product/{id}','ProductController@update')->name('product.update');

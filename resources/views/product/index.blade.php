@@ -31,9 +31,12 @@
                                             <th>Sl</th>
                                             <th>Name</th>
                                             <th>Picture</th>
-                                            <th>Experience</th>
-                                            <th>Phone</th>
-                                            <th>Salary</th>
+                                            <th>Code</th>
+                                            <th>Selling</th>
+                                            <th>Expire Date</th>
+
+                                            <th>Product Route</th>
+                                            <th>Product palce</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
@@ -45,13 +48,15 @@
                                             <td>{{$key+1}}</td>
                                             <td>{{$product->name}}</td>
                                             <td><img src="{{asset('product/'.$product->image)}}" alt="" width="100" height="100"></td>
-                                            <td>{{$product->experience}}</td>
-                                            <td>{{$product->phone}}</td>
-                                            <td>{{$product->salary}}</td>
+                                            <td>{{$product->product_code}}</td>
+                                            <td>{{$product->selling_price}}</td>
+                                            <td>{{$product->expire_date}}</td>
+                                            <td>{{$product->product_route}}</td>
+                                            <td>{{$product->product_place}}</td>
                                             <td>
-                                                <a href="{{route('view.employee',$product->id)}}" class="btn btn-primary btn-sm"><i class="ion-eye"></i></a>
-                                                <a href="{{route('delete.employee',$product->id)}}" class="btn btn-danger btn-sm" id="delete"><i class="ion-trash-b"></i></a>
-                                                <a href="{{route('edit.employee',$product->id)}}" class="btn btn-success btn-sm"><i class="ion-compose"></i></a>
+                                                <a href="{{route('view.product',$product->id)}}" class="btn btn-primary btn-sm"><i class="ion-eye"></i></a>
+                                                <a href="{{route('delete.product',$product->id)}}" class="btn btn-danger btn-sm" id="delete"><i class="ion-trash-b"></i></a>
+                                                <a href="{{route('edit.product',$product->id)}}" class="btn btn-success btn-sm"><i class="ion-compose"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
