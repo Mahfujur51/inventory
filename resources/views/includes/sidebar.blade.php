@@ -50,6 +50,16 @@
 
                     </ul>
                 </li>
+                <li class="has_sub">
+                    <a href="#" class="waves-effect"><i class=" md-account-child"></i><span> Employee Salary </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('salary.index')}}">All salary(EMP)</a></li>
+                        <li><a href="{{route('salary.add')}}">Add Advance  Salary</a></li>
+                        <li><a href="{{route('pay_salary.index')}}">Pay Salary</a></li>
+                        <li><a href="{{route('salary.add')}}">Last Month Salary</a></li>
+
+                    </ul>
+                </li>
 
 
 

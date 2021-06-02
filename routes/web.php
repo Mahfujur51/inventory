@@ -46,3 +46,13 @@ Route::get('/delete/supplier/{id}','SupplierController@delete')->name('delete.su
 Route::post('/store/supplier','SupplierController@store')->name('supplier.store');
 Route::get('/edit/supplier/{id}','SupplierController@edit')->name('edit.supplier');
 Route::post('/update/supplier/{id}','SupplierController@update')->name('supplier.update');
+
+/*Route for Salary*/
+Route::get('/salaries','SalaryController@index')->name('salary.index');
+Route::get('/add/salary','SalaryController@add')->name('salary.add');
+Route::get('/view/salary/{id}','SalaryController@view')->name('view.salary');
+Route::get('/delete/salary/{id}','SalaryController@delete')->name('delete.salary');
+Route::post('/store/salary','SalaryController@store')->name('salary.store');
+Route::get('/edit/salary/{id}','SalaryController@edit')->name('edit.salary');
+Route::post('/update/salary/{id}','SalaryController@update')->name('salary.update');
+Route::get('/pay_salary/index','SalaryController@pay_salary')->name('pay_salary.index');
