@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Employee;
+use App\Exports\ProductsExport;
 use App\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -118,6 +120,10 @@ class ProductController extends Controller
         $product->save();
         return redirect()->route('product.index')->with('success','Product Insert Success');
 
+    }
+    public function export()
+    {
+        return Excel::download(new ProductsExport, 'product.xlsx');
     }
 
 }

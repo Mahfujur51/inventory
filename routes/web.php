@@ -74,6 +74,7 @@ Route::get('/delete/product/{id}','ProductController@delete')->name('delete.prod
 Route::post('/store/product','ProductController@store')->name('product.store');
 Route::get('/edit/product/{id}','ProductController@edit')->name('edit.product');
 Route::post('/update/product/{id}','ProductController@update')->name('product.update');
+Route::get('product/export/', 'ProductController@export')->name('export');
 
 
 /*Route for Expanse*/
@@ -90,5 +91,7 @@ Route::post('/update/expanse/{id}','ExpanseController@update')->name('expanse.up
 
 //Route for Attendace
 Route::get('/attendance','AttendenceController@index')->name('attendance.index');
+Route::get('/edit/attendance/{date}','AttendenceController@edit_attendance')->name('edit.attendance');
 Route::get('/add/attendance','AttendenceController@add')->name('attendance.add');
 Route::post('/add/attendance','AttendenceController@attendance')->name('insert.attendance');
+Route::post('/update/attendance','AttendenceController@update')->name('update.attendance');

@@ -50,8 +50,9 @@
                                                 <td>{{$key+1}}</td>
                                                 <td>{{$employee->name}}</td>
                                                 <td><img src="{{asset('employee/'.$employee->photo)}}" alt="" width="100" height="100"></td>
-                                                  <input type="hidden" name="user_id" value="{{$employee->id}}">
+
                                                   <td>
+                                                    <input type="hidden" name="user_id[]" value="{{$employee->id}}">
                                                     <input type="radio" name="attendance[{{$employee->id}}]" value="present"> Present
                                                     <input type="radio" name="attendance[{{$employee->id}}]" value="absent"> Absent
                                                     <input type="hidden" name="att_date" value="{{date("d/m/y")}}">
