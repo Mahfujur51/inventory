@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Employee;
 use App\Exports\ProductsExport;
+use App\Imports\ProductsImport;
 use App\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -125,5 +126,16 @@ class ProductController extends Controller
     {
         return Excel::download(new ProductsExport, 'product.xlsx');
     }
+    public  function  import_excel(){
+        return view('product.import');
+    }
+
+        public function import(Request  $request)
+        {
+            Excel::import(new ProductsImport,$request->file('import_file'));
+
+            return redirect()->back()->with('success', 'Import Successfully!!');
+        }
+
 
 }

@@ -76,6 +76,8 @@
                     <ul class="list-unstyled">
                         <li><a href="{{route('product.index')}}">All Product</a></li>
                         <li><a href="{{route('product.add')}}">Add New</a></li>
+                        <li><a href="{{route('import.excel')}}">Import & Export</a></li>
+
                     </ul>
                 </li>
                 <li class="has_sub">

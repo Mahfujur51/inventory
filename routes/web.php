@@ -74,7 +74,9 @@ Route::get('/delete/product/{id}','ProductController@delete')->name('delete.prod
 Route::post('/store/product','ProductController@store')->name('product.store');
 Route::get('/edit/product/{id}','ProductController@edit')->name('edit.product');
 Route::post('/update/product/{id}','ProductController@update')->name('product.update');
-Route::get('product/export/', 'ProductController@export')->name('export');
+Route::get('/product/export/', 'ProductController@export')->name('export');
+Route::get('/product/import/excel', 'ProductController@import_excel')->name('import.excel');
+Route::post('/product/import', 'ProductController@import')->name('insert.import');
 
 
 /*Route for Expanse*/
