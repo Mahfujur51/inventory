@@ -26,7 +26,7 @@
                     <a href="{{route('home')}}" class="waves-effect active"><i class="md md-home"></i><span> Dashboard </span></a>
                 </li>
                 <li>
-                    <a href="{{route('home')}}" class="waves-effect active"><i class="md md-home"></i><span>Point Of Sell(POS) </span></a>
+                    <a href="{{route('pos')}}" class="waves-effect active"><i class="md md-home"></i><span>Point Of Sell(POS) </span></a>
                 </li>
 
                 <li class="has_sub">

@@ -97,3 +97,11 @@ Route::get('/edit/attendance/{date}','AttendenceController@edit_attendance')->na
 Route::get('/add/attendance','AttendenceController@add')->name('attendance.add');
 Route::post('/add/attendance','AttendenceController@attendance')->name('insert.attendance');
 Route::post('/update/attendance','AttendenceController@update')->name('update.attendance');
+
+
+//pos system
+Route::get('/pos','PosController@pos')->name('pos');
+Route::post('/customer/store/pos','PosController@store')->name('customer.store.pos');
+Route::post('/add_cart','PosController@addCart')->name('add_cart');
+Route::post('/update_cart/{rowId}','PosController@updateCart')->name('cart_update');
+Route::get('/cart_remove/{rowId}','PosController@removeCart')->name('cart.remove');
