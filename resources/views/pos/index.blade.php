@@ -26,16 +26,7 @@
 
                                         </div>
                                         <div class="panel-body">
-                                            <form action="">
-                                                <div class="form-group">
-                                                    <select name="" class="form-control" id="">
-                                                        <option value="" disabled="" selected="">Select Customer</option>
-                                                        @foreach($customers as $customer)
-                                                        <option >{{$customer->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </form>
+
                                             <div class="price_card text-center">
 
                                                 <ul class="price-features">
@@ -87,7 +78,25 @@
                                                     <h2 class="text-white">{{Cart::total()}}</h2>
 
                                                 </div>
-                                                <button class="btn btn-success"> Create Invoice</button>
+                                                <form action="{{route('invoice')}}" method="post">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <label for="">Select Customer</label>
+                                                        <select class="form-control @error('customer_id') is-invalid @enderror" name="customer_id">
+                                                            <option disabled="" selected=""  >Select Customer</option>
+                                                            @foreach($customers as $customer)
+                                                                <option  value="{{$customer->id}}">{{$customer->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        @error('customer_id')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                        @enderror
+
+                                                    </div>
+
+                                                    <button type="submit" class="btn btn-success"> Create Invoice</button>
+                                                </form>
+
 
                                             </div> <!-- end Pricing_card -->
                                         </div>

@@ -48,6 +48,7 @@
 <script src="{{asset('backend/')}}/js/jquery.todo.js"></script>
 <script src="{{asset('backend/')}}/assets/datatables/jquery.dataTables.min.js"></script>
 <script src="{{asset('backend/')}}/assets/datatables/dataTables.bootstrap.js"></script>
+<script src="{{asset('backend/')}}/js/printThis.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -152,4 +153,5 @@
     // });
 
 </script>
+@yield('custom_script')
 

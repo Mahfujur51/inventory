@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Customer;
+use App\Order;
+use App\OrderDetail;
 use App\Product;
+
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class PosController extends Controller
 {
@@ -91,5 +95,67 @@ class PosController extends Controller
             return redirect()->back()->with('info','Cart Romove Success ');
 
         }
+    }
+    public  function  invoice(Request  $request){
+        $request->validate([
+         'customer_id'=>'required',
+        ],[
+            'customer_id.required'=>'Please select Customer'
+        ]);
+        $id=$request->customer_id;
+        $customer=Customer::findOrFail($id);
+        $contents=Cart::content();
+//        $customer=Customer::where('id',$id)->first();
+
+        return view('pos.invoice',compact('customer','contents'));
+    }
+
+//    public  function  pdf_generate($id){
+//
+//
+//
+//        $customer=Customer::findOrFail($id);
+//
+//        $contents=Cart::content();
+//        return view('pos.invoice',compact('customer','contents'));
+//
+////         $pdf=PDF::loadView('pos.invoice');
+////        return  $pdf->download('invoice.pdf');
+//
+//
+//    }
+public  function  finalInvoice(Request $request){
+        $request->validate([
+            'payment_status'=>'required',
+        ],[
+            'payment_status.required'=>'please select payment Type',
+
+            ]);
+        $order=new Order();
+        $order->customer_id=$request->customer_id;
+        $order->order_date=$request->order_date;
+        $order->order_status=$request->order_status;
+        $order->total_products=$request->total_products;
+        $order->sub_total=$request->sub_total;
+        $order->vat=$request->vat;
+        $order->total=$request->total;
+        $order->payment_status=$request->payment_status;
+        $order->pay=$request->pay;
+        $order->due=$request->due;
+        $order->save();
+        $order_id=$order->id;
+        $order_details=new OrderDetail();
+        $contents=Cart::content();
+        foreach ($contents as $content){
+            $order_details->order_id=$order_id;
+            $order_details->product_id=$content->id;
+            $order_details->quantity=$content->qty;
+            $order_details->unit_cost=$content->price;
+            $order_details->total=$content->price*$content->qty;
+            $order_details->save();
+            Cart::destroy();
+        }
+    return redirect()->route('pos')->with('success','Customer Insert Success|| please delevery product & Change Status');
+
     }
 }

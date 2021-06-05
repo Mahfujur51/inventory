@@ -105,3 +105,6 @@ Route::post('/customer/store/pos','PosController@store')->name('customer.store.p
 Route::post('/add_cart','PosController@addCart')->name('add_cart');
 Route::post('/update_cart/{rowId}','PosController@updateCart')->name('cart_update');
 Route::get('/cart_remove/{rowId}','PosController@removeCart')->name('cart.remove');
+Route::post('/invoice','PosController@invoice')->name('invoice');
+Route::post('/final-invoice','PosController@finalInvoice')->name('final.invoice');
+Route::get('/generate-pdf/{id}','PosController@pdf_generate')->name('pdf-generate');
