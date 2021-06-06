@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('pos','active')
 @section('content')
     <div class="content">
         <div class="container" id="mySelector">

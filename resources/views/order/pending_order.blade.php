@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('category','active')
+@section('order','active')
 @section('content')
     <div class="content">
         <div class="container">
@@ -7,10 +7,10 @@
             <!-- Page-Title -->
             <div class="row">
                 <div class="col-sm-12">
-                    <h4 class="pull-left page-title">Welcome ! to Category Page</h4>
+                    <h4 class="pull-left page-title">Welcome ! to Pending order  Page</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{route('home')}}">Moltran</a></li>
-                        <li class="active">Category</li>
+                        <li class="active">Pending </li>
                     </ol>
                 </div>
             </div>
@@ -20,7 +20,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title ">Show ALl Category</h3>
+                            <h3 class="panel-title ">Show ALl Product <a href="{{route('export')}}" class="btn btn-success btn-sm pull-right">Export</a> </h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -30,22 +30,31 @@
                                         <tr>
                                             <th>Sl</th>
                                             <th>Name</th>
+                                            <th>Date</th>
+                                            <th>Quantity</th>
+                                            <th>Total Amount</th>
+                                            <th>Payment</th>
+                                            <th>Order Status</th>
                                             <th>Action</th>
-
                                         </tr>
                                         </thead>
 
 
                                         <tbody>
-                                        @foreach($categories as $key=>$category)
-                                        <tr>
-                                            <td>{{$key+1}}</td>
-                                            <td>{{$category->name}}</td>
-                                            <td>
-                                                <a href="{{route('delete.category',$category->id)}}" class="btn btn-danger btn-sm" id="delete"><i class="ion-trash-b"></i></a>
-                                                <a href="{{route('edit.category',$category->id)}}" class="btn btn-success btn-sm"><i class="ion-compose"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach($pending_order as $key=>$order)
+                                            <tr>
+                                                <td>{{$key+1}}</td>
+                                                <td>{{$order->customer->name}}</td>
+                                                <td>{{$order->order_date}}</td>
+                                                <td>{{$order->total_products}}</td>
+                                                <td>{{$order->total}}</td>
+                                                <td>{{$order->payment_status}}</td>
+                                                <td>{{$order->order_status}}</td>
+                                                <td>
+                                                    <a href="{{route('view.order',$order->id)}}" class="btn btn-primary btn-sm"><i class="ion-eye"></i></a>
+
+                                                </td>
+                                            </tr>
                                         @endforeach
 
                                         </tbody>

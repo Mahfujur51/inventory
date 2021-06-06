@@ -108,3 +108,15 @@ Route::get('/cart_remove/{rowId}','PosController@removeCart')->name('cart.remove
 Route::post('/invoice','PosController@invoice')->name('invoice');
 Route::post('/final-invoice','PosController@finalInvoice')->name('final.invoice');
 Route::get('/generate-pdf/{id}','PosController@pdf_generate')->name('pdf-generate');
+
+/*Route for Expanse*/
+Route::get('/order/pending','OrderController@pending')->name('order.pending');
+Route::get('/confirm/order','OrderController@confirm')->name('order.confirm');
+Route::get('/view/order/{id}','OrderController@view')->name('view.order');
+Route::get('/approve/order/{id}','OrderController@orderApprove')->name('order_approve');
+//Route::post('/store/order','OrderController@store')->name('order.store');
+//Route::get('/edit/order/{id}','OrderController@edit')->name('edit.order');
+//Route::get('/today/order/','OrderController@today')->name('today.order');
+//Route::get('/month/order/','OrderController@month')->name('month.order');
+//Route::get('/year/order/','OrderController@year')->name('year.order');
+//Route::post('/update/order/{id}','OrderController@update')->name('order.update');
